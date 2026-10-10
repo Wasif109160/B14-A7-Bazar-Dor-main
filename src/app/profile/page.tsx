@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import { useSession, signOut } from '@/lib/auth-client';
 import toast from 'react-hot-toast';
 import { User, Mail, Calendar, ShieldCheck, Edit3, LogOut, ArrowLeft } from 'lucide-react';
-import { toBanglaNumber } from '@/lib/utils';
 
 export default function ProfilePage() {
   const router = useRouter();

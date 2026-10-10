@@ -1,15 +1,7 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
-  const [year, setYear] = useState<number>(2026);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
-
   return (
     <footer className="mt-auto bg-white border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
@@ -32,7 +24,7 @@ export default function Footer() {
 
         <div className="mt-6 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400">
           <div>
-            © {year} বাজার দর (BazarDor) • সর্বস্বত্ব সংরক্ষিত।
+            © ২০২৬ বাজার দর (BazarDor) • সর্বস্বত্ব সংরক্ষিত।
           </div>
           <div className="flex items-center gap-4">
             <Link href="/" className="hover:text-green-700 transition-colors">হোম</Link>

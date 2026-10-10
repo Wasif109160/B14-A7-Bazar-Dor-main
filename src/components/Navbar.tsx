@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useSession, signOut } from '@/lib/auth-client';
@@ -8,6 +8,10 @@ import { getBanglaDate } from '@/lib/utils';
 import { Category } from '@/lib/types';
 import toast from 'react-hot-toast';
 import { User, LogOut, LogIn, UserPlus, Menu, X } from 'lucide-react';
+
+const subscribe = () => () => {};
+const getClientDate = () => getBanglaDate();
+const getServerDate = () => 'শনিবার, ১০ অক্টোবর, ২০২৬';
 
 interface NavbarProps {
   categories?: Category[];
@@ -28,12 +32,8 @@ export default function Navbar({ categories = defaultCategories }: NavbarProps) 
   const pathname = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
-  const [banglaDate, setBanglaDate] = useState<string>('শনিবার, ১০ অক্টোবর, ২০২৬');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setBanglaDate(getBanglaDate());
-  }, []);
+  const banglaDate = useSyncExternalStore(subscribe, getClientDate, getServerDate);
 
   const handleSignOut = async () => {
     try {

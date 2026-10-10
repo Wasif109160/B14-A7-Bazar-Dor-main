@@ -32,16 +32,16 @@ export default function ProductDetailView({ product, slug }: ProductDetailViewPr
   const router = useRouter();
   const { data: session, isPending } = useSession();
   const [selectedDivision, setSelectedDivision] = useState<string>('all');
-  const [hasRedirected, setHasRedirected] = useState(false);
+  const redirectedRef = React.useRef(false);
 
   // Protected route check
   useEffect(() => {
-    if (!isPending && !session?.user && !hasRedirected) {
-      setHasRedirected(true);
+    if (!isPending && !session?.user && !redirectedRef.current) {
+      redirectedRef.current = true;
       toast.error('বিস্তারিত দেখতে প্রথমে সাইন ইন করুন');
       router.push(`/signin?redirect=/product/${slug}`);
     }
-  }, [isPending, session, slug, router, hasRedirected]);
+  }, [isPending, session, slug, router]);
 
   // Calculations for price summary
   const priceStats = useMemo(() => {

@@ -11,16 +11,16 @@ export default function UpdateProfilePage() {
   const router = useRouter();
   const { data: session, isPending } = useSession();
 
-  const [name, setName] = useState('');
+  const [customName, setCustomName] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  const name = customName !== null ? customName : (session?.user?.name || '');
 
   useEffect(() => {
     if (!isPending && !session?.user) {
       toast.error('তথ্য পরিবর্তন করতে প্রথমে সাইন ইন করুন');
       router.push('/signin?redirect=/profile/update');
-    } else if (session?.user?.name) {
-      setName(session.user.name);
     }
   }, [isPending, session, router]);
 
@@ -116,7 +116,7 @@ export default function UpdateProfilePage() {
               <input
                 type="text"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setCustomName(e.target.value)}
                 placeholder="আপনার নাম লিখুন"
                 required
                 className="w-full pl-10 pr-4 py-2.5 text-sm bg-gray-50/50 rounded-xl border border-gray-200 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-green-500/20 focus:border-green-600 transition-all font-semibold"
