@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor) — নিত্যপ্রয়োজনীয় পণ্যের বাজারদর ট্র্যাকার
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![BetterAuth](https://img.shields.io/badge/Authentication-BetterAuth-emerald)](https://better-auth.com/)
 
-First, run the development server:
+> **বাজার দর (BazarDor)** হলো একটি আধুনিক, পূর্ণাঙ্গ ও প্রতিক্রিয়াশীল (Responsive) ওয়েব অ্যাপ্লিকেশন, যা বাংলাদেশের বিভিন্ন বিভাগ ও বাজারের নিত্যপ্রয়োজনীয় পণ্যের (চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলা) বর্তমান দাম, দামের হ্রাস-বৃদ্ধি এবং বাজারভিত্তিক তুলনামূলক বিশ্লেষণ এক নজরে উপস্থাপন করে।
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🌐 লাইভ ও রিপোজিটরি লিংক (Live & Repository)
+
+- **লাইভ ওয়েবসাইট:** [https://bazar-dor-app.vercel.app](https://bazar-dor-app.vercel.app) *(Deploy on Vercel)*
+- **গিটহাব রিপোজিটরি:** [https://github.com/your-username/bazar-dor](https://github.com/your-username/bazar-dor)
+
+---
+
+## 🛠️ ব্যবহৃত প্রযুক্তি সমূহ (Technologies Used)
+
+| প্রযুক্তি | ব্যবহার ও উদ্দেশ্য |
+| :--- | :--- |
+| **Next.js 16 (App Router)** | ইউজার ইন্টারফেস তৈরি, সার্ভার কম্পোনেন্টস ও রাউটিং ব্যবস্থাপনা |
+| **TypeScript** | টাইপ-সেফ কোডবেস এবং ডেটা স্ট্রাকচার নিশ্চিতকরণ |
+| **Tailwind CSS v4** | আধুনিক, ক্লিন ও সম্পূর্ণ রেসপন্সিভ স্টাইলিং |
+| **BetterAuth** | সুরক্ষিত প্রমাণীকরণ (ইমেইল/পাসওয়ার্ড, সোশ্যাল লগইন, সেশন গার্ড) |
+| **SQLite (better-sqlite3)** | সুরক্ষিত ও দ্রুত লোকাল ডেটাবেস সমাধান |
+| **React Hot Toast** | মসৃণ ও দৃষ্টিনন্দন টোস্ট নোটিফিকেশন সিস্টেম |
+| **Lucide React** | আধুনিক ও লাইটওয়েট ভেক্টর আইকন |
+
+---
+
+## 🌟 মূল বৈশিষ্ট্যসমূহ (Key Features)
+
+### ১. 🔝 লাইভ প্রাইস টিকার ও ক্যাটাগরি নেভিগেশন (Navbar & Live Price Ticker)
+- ফিগমা ডিজাইন অনুসরণে নির্মিত ব্র্যান্ড লোগো এবং আজকের বাংলা তারিখ প্রদর্শন (`শনিবার, ১০ অক্টোবর, ২০২৬`)।
+- প্রতিটি ক্যাটাগরির জন্য কাস্টম আইকনসহ ডেডিকেটেড ট্যাব লিংক এবং সক্রিয় ক্যাটাগরি হাইলাইট।
+- নববারের ঠিক নিচে চলমান ইনফিনিট মারকুই টিকার (Emoji + পণ্যের নাম + আজকের দাম + শতকরা হ্রাস-বৃদ্ধির ব্যাজ)। মাউস হোভার করলে টিকার পজ হয়।
+
+### ২. 📈 আজ দাম বেড়েছে ও দাম কমেছে সেকশন (Market Risers & Fallers)
+- **আজ দাম বেড়েছে ▲:** বাজারে গতকালের তুলনায় সবচেয়ে বেশি দাম বৃদ্ধি পাওয়া শীর্ষ ৬টি পণ্যের তালিকা।
+- **আজ দাম কমেছে ▼:** গতকালের তুলনায় সবচেয়ে বেশি দাম কমে সাশ্রয়ী হওয়া শীর্ষ ৬টি পণ্যের তালিকা।
+- স্বয়ংক্রিয় গাণিতিক বিশ্লেষণে গ্রিন (বৃদ্ধি), রেড (হ্রাস) এবং গ্রে (অপরিবর্তিত) ব্যাজ প্রদর্শন।
+
+### ৩. 🔍 লাইভ ফিল্টার, সার্চ ও নিউমেরিক সর্টিং (Challenge C1 Included)
+- ক্যাটাগরি পিলস দিয়ে এক ক্লিকে পণ্য ফিল্টারিং।
+- রিয়েল-টাইম লাইভ সার্চ বার (পণ্যের বাংলা নাম, ক্যাটাগরি বা স্লাগ দিয়ে তাত্ক্ষণিক ফিল্টার)।
+- **চ্যালেঞ্জ C1:** আধুনিক ড্রপডাউন সহ সংখ্যাসূচক সর্টিং:
+  - `ডিফল্ট`
+  - `দাম: কম থেকে বেশি`
+  - `দাম: বেশি থেকে কম`
+  - বাংলা সংখ্যা ও মূল্যের আসল সাংখ্যিক মান (Numeric Value) বিবেচনা করে নিখুঁতভাবে সর্ট করা হয়।
+
+### ৪. 🔒 সুরক্ষিত পণ্যের বিস্তারিত পৃষ্ঠা (Protected Dynamic Details Page: `/product/[slug]`)
+- **প্রোটেক্টেড রাউট:** লগইন ছাড়া কোনো ব্যবহারকারী পণ্য বিশদে ঢুকতে চাইলে সুরক্ষিত গার্ডের মাধ্যমে টোস্ট নোটিফিকেশন প্রদর্শন করে `/signin` এ রিডাইরেক্ট করা হয়। লগইনের পর স্বয়ংক্রিয়ভাবে পূর্বের গন্তব্য পৃষ্ঠায় ফিরে আসে।
+- পণ্যের বিস্তারিত সারাংশ ও ইউনিট তথ্য।
+- **দামের সারসংক্ষেপ:** বাজারভিত্তিক ডেটা থেকে স্বয়ংক্রিয়ভাবে গণনা করা সর্বনিম্ন দাম, গড় দাম এবং সর্বাধিক দামের কার্ড। সবচেয়ে সাশ্রয়ী ও সবচেয়ে বেশি দামের বাজারের হাইলাইট।
+- **বাজারভিত্তিক আজকের দাম:** কারওয়ান বাজার, গ্রীন মার্কেট, সদর বাজারসহ ১২টি বাজারের বিভাগভিত্তিক সর্বনিম্ন, সর্বাধিক ও গড় মূল্যের সুন্দর টেবিল এবং বিভাগ ফিল্টার।
+
+### ৫. 🔐 পূর্ণাঙ্গ প্রমাণীকরণ ব্যবস্থা (BetterAuth System)
+- **সাইন ইন (`/signin`):** ইমেইল ও পাসওয়ার্ড দিয়ে লগইন, ফিল্ড ভ্যালিডেশন এবং উপযুক্ত টোস্ট মেসেজ।
+- **সাইন আপ (`/signup`):** নাম, ইমেইল ও পাসওয়ার্ড দিয়ে নতুন অ্যাকাউন্ট তৈরি এবং সফল নিবন্ধনের পর স্বয়ংক্রিয়ভাবে লগইন পেজে নেভিগেশন।
+- **সোশ্যাল লগইন:** Google ও GitHub দিয়ে এক-ক্লিকে সাইন ইন করার সুবিধা (পরীক্ষক ও ডেমো ট্রায়ালের জন্য ওয়ান-ক্লিক ক্রেডেনশিয়াল হ্যান্ডলার অন্তর্ভুক্ত)।
+- নিরাপদ সেশন কুকি ও লগআউট কার্যকারিতা।
+
+### ৬. 👤 প্রোফাইল ও তথ্য আপডেট ফিচার (Challenge C3 Included)
+- **আমার প্রোফাইল (`/profile`):** ব্যবহারকারীর পুরো নাম, ইমেইল অ্যাড্রেস, স্ট্যাটাস এবং যোগদানের তারিখ সহ সুন্দর ড্যাশবোর্ড।
+- **তথ্য আপডেট (`/profile/update`):** প্রোফাইল পেজে থাকা "তথ্য আপডেট করুন" বাটনে ক্লিক করলে নতুন রাউটে নিয়ে যায়।
+- অফিসিয়াল [BetterAuth User Accounts API](https://better-auth.com/docs/concepts/users-accounts#update-user) অনুসরণ করে `authClient.updateUser({ name })` মেথডের মাধ্যমে নাম পরিবর্তন ও ডাটাবেস আপডেট সম্পন্ন হয়।
+
+### ৭. 📱 সম্পূর্ণ রেসপন্সিভ ও ফ্রেন্ডলি ৪০৪ পেজ (Responsive Design & 404 Page)
+- মোবাইল, ট্যাবলেট, ল্যাপটপ এবং ডেস্কটপ — সব ধরনের স্ক্রিন সাইজে ফ্লুইড গ্রিড এবং ড্রয়ার ন্যাভিগেশন।
+- যেকোনো ভুল বা অচেনা রাউটের জন্য কাস্টম বাংলা ৪০৪ পৃষ্ঠা এবং হোম পেজে ফিরে যাওয়ার অ্যাকশন বাটন।
+- ডিপ্লয়মেন্টের পর ডায়নামিক রাউট রিফ্রেশ করলেও কোনো পেজ ক্র্যাশ বা 404 হয় না (Static Pre-rendering Enabled)।
+
+---
+
+## 📂 প্রোজেক্ট ফোল্ডার স্ট্রাকচার (Project Structure)
+
+```text
+bazar-dor/
+├── public/                     # স্ট্যাটিক অ্যাসেট (hero image, logo)
+│   ├── bazar-hero.png
+│   └── logo-icon.png
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── api/auth/[...all]/  # BetterAuth API Route Handler
+│   │   ├── category/[slug]/    # ক্যাটাগরি ডায়নামিক পেজ ও লোডিং স্কেলিটন
+│   │   ├── product/[slug]/     # প্রোটেক্টেড পণ্য বিস্তারিত পেজ
+│   │   ├── profile/            # প্রোফাইল ও তথ্য আপডেট পেজ (C3)
+│   │   ├── signin/             # সাইন ইন পেজ
+│   │   ├── signup/             # সাইন আপ পেজ
+│   │   ├── not-found.tsx       # ফ্রেন্ডলি বাংলা ৪০৪ পেজ
+│   │   ├── layout.tsx          # রুট লেআউট (Navbar, Marquee, Footer, Toaster)
+│   │   └── page.tsx            # হোম পেজ (Hero, Risers, Fallers, All Products)
+│   ├── components/             # রিইউজেবল UI কম্পোনেন্টস
+│   │   ├── AllProductsSection.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── PriceTicker.tsx
+│   │   ├── ProductCard.tsx
+│   │   ├── ProductSkeleton.tsx
+│   │   ├── SortDropdown.tsx
+│   │   ├── ToastProvider.tsx
+│   │   └── TrendingSections.tsx
+│   └── lib/                    # ইউটিলিটি, এপিআই ও প্রমাণীকরণ লজিক
+│       ├── api.ts              # রেসিলিয়েন্ট এপিআই ফেচিং (ফলব্যাক সহ)
+│       ├── auth-client.ts      # BetterAuth ক্লায়েন্ট কনফিগারেশন
+│       ├── auth.ts             # BetterAuth সার্ভার কনফিগারেশন ও SQLite
+│       ├── types.ts            # টাইপস্ক্রিপ্ট ইন্টারফেস
+│       └── utils.ts            # বাংলা ডিজিট, তারিখ ও প্রাইস ফরম্যাটার
+├── .env.example                # এনভায়রনমেন্ট ভেরিয়েবল টেমপ্লেট
+└── README.md                   # ডকুমেন্টেশন
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 লোকাল সেটআপ ও রান করার নিয়ম (Getting Started)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ১. রিপোজিটরি ক্লোন করুন
+```bash
+git clone https://github.com/your-username/bazar-dor.git
+cd bazar-dor
+```
 
-## Learn More
+### ২. ডিপেন্ডেন্সি ইনস্টল করুন
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### ৩. এনভায়রনমেন্ট ভেরিয়েবল সেট করুন
+একটি `.env.local` ফাইল তৈরি করুন এবং নিচের মানগুলো দিন:
+```env
+BETTER_AUTH_URL=http://localhost:3000
+BETTER_AUTH_SECRET=your-random-32-character-secret-key
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ৪. ডেভেলপমেন্ট সার্ভার চালু করুন
+```bash
+npm run dev
+```
+ব্রাউজারে [http://localhost:3000](http://localhost:3000) এ প্রবেশ করুন।
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ৫. প্রোডাকশন বিল্ড পরীক্ষা করুন
+```bash
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📋 এসাইনমেন্ট চেকলিস্ট (Requirements Verification)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [x] **রিস্পনসিভ ডিজাইন:** মোবাইল, ট্যাবলেট এবং ডেস্কটপে পারফেক্ট লেআউট।
+- [x] **নববার:** ফিগমা অনুযায়ী বাংলা তারিখ, লোগো, ক্যাটাগরি মেনু এবং অথ বাটন।
+- [x] **প্রাইস টিকার:** নজকাড়া মারকুই ইনফিনিট স্ক্রলিং (হোভারে পজ)।
+- [x] **হিরো ব্যানার:** আইব্রো স্ট্যাটাস, বাংলা শিরোনাম, ইমেজ এবং `#সব-পণ্য` অ্যাঙ্কর স্ক্রল।
+- [x] **আজ দাম বেড়েছে ও কমেছে:** শীর্ষ ৬টি বৃদ্ধিপ্রাপ্ত ও হ্রাসপ্রাপ্ত পণ্যের তালিকা।
+- [x] **সব পণ্য সেকশন:** ৩৩টি পণ্যের কার্ড, রিয়েল-টাইম সার্চ, ক্যাটাগরি ফিল্টার ও সর্টিং।
+- [x] **প্রোটেক্টেড রাউট:** লগইন ছাড়া `/product/[slug]` এ প্রবেশ আটকাতে রিডাইরেক্ট ও টোস্ট নোটিফিকেশন।
+- [x] **বাজারভিত্তিক দর:** বিভিন্ন বাজারের সর্বনিম্ন, সর্বোচ্চ এবং গড় দর বিশ্লেষণ।
+- [x] **ক্যাটাগরি পেজ:** সাজান ড্রপডাউন, স্কেলিটন লোডার এবং এম্পটি স্টেট।
+- [x] **BetterAuth প্রমাণীকরণ:** সাইন ইন, সাইন আপ, সোশ্যাল লগইন ও সেশন হ্যান্ডলিং।
+- [x] **ফ্রেন্ডলি ৪০৪:** সুন্দর বাংলা ৪০৪ পেজ।
+- [x] **চ্যালেঞ্জ C1:** বাংলা নিউমেরাল সহ প্রাইস সর্টিং (কম থেকে বেশি, বেশি থেকে কম)।
+- [x] **চ্যালেঞ্জ C2:** সাজানো ও প্রফেশনাল README ফাইল।
+- [x] **চ্যালেঞ্জ C3:** My Profile থেকে নাম আপডেট করার ফিচার (`authClient.updateUser`).
+- [x] **গিটহাবে ৮+ মিনিংফুল কমিট সম্পন্ন।**
+
+---
+
+> Crafted with ❤️ for **Programming Hero Next.js Assignment 07 (B14-A7-Bazar Dor)**.
