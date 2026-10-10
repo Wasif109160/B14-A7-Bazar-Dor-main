@@ -12,8 +12,7 @@
 ## 🌐 লাইভ ও রিপোজিটরি লিংক (Live & Repository)
 
 - **লাইভ ওয়েবসাইট:** https://b14-a7-bazar-dor-main-ten.vercel.app/
-- **গিটহাব রিপোজিটরি:** [https://github.com/your-username/bazar-dor](https://github.com/your-username/bazar-dor)
-
+- **গিটহাব রিপোজিটরি:** https://github.com/Wasif109160/B14-A7-Bazar-Dor-main.git
 ---
 
 ## 🛠️ ব্যবহৃত প্রযুক্তি সমূহ (Technologies Used)
