@@ -11,7 +11,7 @@
 
 ## 🌐 লাইভ ও রিপোজিটরি লিংক (Live & Repository)
 
-- **লাইভ ওয়েবসাইট:** [https://bazar-dor-app.vercel.app](https://bazar-dor-app.vercel.app) *(Deploy on Vercel)*
+- **লাইভ ওয়েবসাইট:** https://b14-a7-bazar-dor-main-ten.vercel.app/
 - **গিটহাব রিপোজিটরি:** [https://github.com/your-username/bazar-dor](https://github.com/your-username/bazar-dor)
 
 ---
